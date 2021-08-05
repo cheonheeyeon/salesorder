@@ -1,0 +1,48 @@
+<mvc:View xmlns="sap.m" xmlns:semantic="sap.f.semantic" xmlns:mvc="sap.ui.core.mvc" controllerName="so.zwijard01.controller.showBP" displayBlock="true">
+    <App>
+		<pages>
+			<Page title="고객/거래처 리스트" content="{/BPMasterSet}">
+				<content>
+				    <Table noDataText="Drop column list items here and columns in the area above" id="__table0">
+				        <items>
+				            <ColumnListItem id="__item0">
+				                <cells>
+				                    <Text text="{Partner}" id="__text0"/>
+				                    <Text text="{Name1}" id="__text1"/>
+				                    <Text text="{Telf1}" id="__text2"/>
+				                    <Text text="{BuSort1}" id="__text3"/>
+				                    <Text text="{path: 'Butype', formatter: '.formatter.BPtype'}" id="__text4"/></cells>
+				            </ColumnListItem></items>
+				        <columns>
+				        	<Column id="__column0">
+				                <header>
+				                    <Label text="파트너번호" id="__label0"/>
+				                </header>
+				            </Column>
+				            <Column id="__column1">
+				                <header>
+				                    <Label text="파트너명" id="__label1"/>
+				                </header>
+				            </Column>
+				            <Column id="__column2" minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+				                <header>
+				                    <Label text="전화번호" id="__label2"/>
+				                </header>
+				            </Column>
+				            <Column id="__column3" minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+				                <header>
+				                    <Label text="검색어" id="__label3"/>
+				                </header>
+				            </Column>
+				            <Column id="__column4" minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+				                <header>
+				                    <Label text="파트너 구분" id="__label4"/>
+				                </header>
+				            </Column>
+				         </columns>
+				     </Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

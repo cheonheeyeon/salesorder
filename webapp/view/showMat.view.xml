@@ -1,0 +1,48 @@
+<mvc:View xmlns="sap.m" xmlns:semantic="sap.f.semantic" xmlns:mvc="sap.ui.core.mvc" controllerName="so.zwijard01.controller.showMat" displayBlock="true">
+    <App>
+		<pages>
+			<Page title="자재리스트" content="{/MaterialMasterSet}">
+				<content>
+				    <Table noDataText="Drop column list items here and columns in the area above" id="__table0">
+				        <items>
+				            <ColumnListItem id="__item0">
+				                <cells>
+				                    <Text text="{Matnr}" id="__text0"/>
+				                    <Text text="{Maktx}" id="__text1"/>
+				                    <Text text="{Meins}" id="__text2"/>
+				                    <Text text="{Stprs}" id="__text3"/>
+				                    <Text text="{Waers}" id="__text4"/></cells>
+				            </ColumnListItem></items>
+				        <columns>
+				        	<Column id="__column0">
+				                <header>
+				                    <Label text="자재번호" id="__label0"/>
+				                </header>
+				            </Column>
+				            <Column id="__column1">
+				                <header>
+				                    <Label text="자재명" id="__label1"/>
+				                </header>
+				            </Column>
+				            <Column id="__column2" minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+				                <header>
+				                    <Label text="기본단위" id="__label2"/>
+				                </header>
+				            </Column>
+				            <Column id="__column3" minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+				                <header>
+				                    <Label text="표준가격" id="__label3"/>
+				                </header>
+				            </Column>
+				            <Column id="__column4" minScreenWidth="Tablet" demandPopin="true" hAlign="End">
+				                <header>
+				                    <Label text="통화키" id="__label4"/>
+				                </header>
+				            </Column>
+				         </columns>
+				     </Table>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</mvc:View>

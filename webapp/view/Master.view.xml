@@ -1,0 +1,36 @@
+<mvc:View xmlns="sap.m" xmlns:semantic="sap.f.semantic" xmlns:mvc="sap.ui.core.mvc" controllerName="so.zwijard01.controller.Master">
+
+	<semantic:SemanticPage id="masterPage" title="오더리스트" navButtonPress="onNavBack" showNavButton="true" preserveHeaderStateOnScroll="true" toggleHeaderOnTitleClick="false">
+		<semantic:titleHeading>
+			<Title id="masterPageTitle" text="{masterView>/title}" level="H2"/>
+		</semantic:titleHeading>
+		<semantic:content>
+            <PullToRefresh id="pullToRefresh" visible="{device>/support/touch}" refresh="onRefresh"/>
+			<!-- For client side filtering add this to the items attribute: parameters: {operationMode: 'Client'}}" -->
+			<List id="list" width="auto" class="sapFDynamicPageAlignContent" items="{      path: '/SOHeaderSet',      sorter: {       path: 'Kunnr',       descending: false      },      groupHeaderFactory: '.createGroupHeader'     }" busyIndicatorDelay="{masterView>/delay}" noDataText="{masterView>/noDataText}" mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}" growing="true" growingScrollToLoad="true" updateFinished=".onUpdateFinished" selectionChange=".onSelectionChange" headerText="주문번호">
+				<headerToolbar>
+					<OverflowToolbar>
+						<SearchField id="searchField" showRefreshButton="true" tooltip="{i18n>masterSearchTooltip}" search=".onSearch" width="auto">
+							<layoutData>
+								<OverflowToolbarLayoutData minWidth="150px" maxWidth="240px" shrinkable="true" priority="NeverOverflow"/>
+							</layoutData>
+						</SearchField>
+						<ToolbarSpacer/>
+						<Button id="sortButton" press=".onOpenViewSettings" icon="sap-icon://sort" type="Transparent"/>
+                        <content>
+			                <Button text="오더생성" width="auto" id="__button0" type="Emphasized" icon="sap-icon://cart-4" press="onCreatePress"/>
+			                <ToolbarSeparator id="__separator0"/>
+			                <Button text="고객마스터" width="auto" id="__button1" press="onBPMaster"/>
+			                <ToolbarSeparator id="__separator1"/>
+			                <Button text="자재마스터" width="auto" id="__button2" press="onMatMaster"/>
+			            </content>
+					</OverflowToolbar>
+				</headerToolbar>
+				<items>
+					<ObjectListItem type="Navigation" press=".onSelectionChange" title="{Vbeln}" number="{Netwr}" numberUnit="{Waers}" intro="주문번호">
+					</ObjectListItem>
+				</items>
+			</List>
+		</semantic:content>
+	</semantic:SemanticPage>
+</mvc:View>
